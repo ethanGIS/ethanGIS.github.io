@@ -210,8 +210,19 @@ body:not(.page) header:not(.scrolled) nav a{ color:#fff; }
 
 /* video bg */
 .video-bg{ position:absolute; inset:0; z-index:0; overflow:hidden; }
-.video-bg video{ position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .6s ease; }
+.video-bg video{
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  object-fit:cover;
+  opacity:0; transition:opacity .6s ease;
+  /* help iOS avoid black bars on rotate */
+  min-width:100%; min-height:100%;
+}
 .video-bg video.loaded{ opacity:1; }
+
+/* Accessibility: respect reduced motion — hide video and use static image fallback */
+@media (prefers-reduced-motion: reduce){
+  .video-bg{ display:none; }
+}
 
 /* ================= Trust strip ================= */
 .trust{ background:var(--brand-white); border-top:1px solid rgba(15,35,59,.08); border-bottom:1px solid rgba(15,35,59,.08); }
@@ -501,6 +512,7 @@ header nav a.cta:hover{ background:#007c82; transform:translateY(-2px); }
 @media (prefers-reduced-motion:reduce){
   .reveal,.reveal *{ transition:none !important; transform:none !important; opacity:1 !important; filter:none !important; }
 }
+
 /* ===== Header CTA color rules ===== */
 /* Default: dark navy */
 header .nav a.cta{
@@ -530,6 +542,7 @@ body:not(.page) header:not(.scrolled) .nav a.cta:hover{
     background: var(--brand-teal);
   }
 }
+
 /* ================= Who We Serve – mobile polish ================= */
 
 /* Reusable "card" (used in FAQ, etc.) */
@@ -595,6 +608,7 @@ body:not(.page) header:not(.scrolled) .nav a.cta:hover{
   .tiles{ gap: 14px; }
   .feature, .card, .tile{ max-width: 600px; }
 }
+
 /* ===== Stack feature boxes on mobile ===== */
 @media (max-width:900px){
   .grid-two {
