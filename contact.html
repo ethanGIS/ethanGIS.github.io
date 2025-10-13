@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us — GIS Radiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css">
+
+  <!-- Page-local polish (form + map). Safe, minimal, and scoped. -->
+  <style>
+    .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
+    .contact-info img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;height:auto;object-fit:cover}
+    .contact-info .block{margin:12px 0 0}
+    .contact-info a{font-weight:700}
+    .contact-card{background:var(--brand-white);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .contact-form label{font-size:14px;color:var(--brand-slate)}
+    .contact-form input,.contact-form textarea{
+      width:100%;background:transparent;border:none;border-bottom:2px solid rgba(0,0,0,.2);
+      padding:10px 4px 12px;font:inherit;color:var(--brand-navy);outline:none;border-radius:0;
+    }
+    .contact-form input:focus,.contact-form textarea:focus{border-bottom-color:var(--brand-teal)}
+    .contact-form textarea{min-height:120px;resize:vertical}
+    .contact-form .actions{margin-top:16px}
+    .map-embed{margin-top:22px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    @media (max-width: 900px){ .contact-grid{grid-template-columns:1fr} .contact-form .row{grid-template-columns:1fr} }
+  </style>
+</head>
+<body class="page">
+  <!-- Header -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="Global Imaging Specialists">
+      <!-- White logo (shows over dark hero) -->
+      <img class="on-dark"  src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+      <!-- Teal/Navy logo (shows on solid header / internal pages) -->
+      <img class="on-light" src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+    </a>
+
+    <button class="menu-btn" aria-label="Toggle menu" onclick="window.toggleMenu()">☰</button>
+
+    <nav>
+      <ul id="mainnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="who.html">Who We Serve</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="contact.html" class="cta">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="reveal" data-animate="fade-up" style="margin:0">Contact Us</h1>
+      <p class="section-sub reveal" data-animate="fade-up" style="color:#dbe5f5;margin-top:8px">
+        Flexible teleradiology solutions for each care setting.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact content -->
+  <section>
+    <div class="container contact-grid" data-stagger=".06">
+
+      <!-- Left column: image + details -->
+      <div class="contact-info reveal" data-animate="fade-right">
+        <img src="assets/contact-skeleton.jpg" alt="Contact GIS Radiology">
+
+        <div class="block">
+          <p style="margin:8px 0 6px"><strong>Tel:</strong> <a href="tel:18137207237">813.720.7237</a></p>
+          <p style="margin:6px 0"><strong>Fax:</strong> <a href="fax:18883166013">888.316.6013</a></p>
+        </div>
+
+        <div class="block">
+          <address style="font-style:normal;line-height:1.6">
+            40946 US HWY 19 N STE 101<br>
+            Tarpon Springs, FL 34689
+          </address>
+        </div>
+
+        <div class="block">
+          <a href="mailto:info@gisrads.com">info@gisrads.com</a>
+          <span style="display:inline-block;margin-left:8px">
+            <a href="https://www.linkedin.com/company/global-imaging-specialists/" target="_blank" rel="noopener">LinkedIn</a>
+          </span>
+        </div>
+
+        <p class="small" style="margin:14px 0 0;color:var(--brand-slate)">
+          For general inquiries or partnership opportunities, please fill out the form or reach us directly by phone/email.
+        </p>
+      </div>
+
+      <!-- Right column: form -->
+      <div class="contact-card reveal" data-animate="fade-left">
+        <h2 class="section-title" style="margin:0 0 10px">Contact us</h2>
+
+        <!-- NOTE:
+             - If you already have a backend endpoint, change the `action` to that URL.
+             - If not, you can use Formspree (free) and replace the action with their endpoint.
+             - As a fallback, the form will do nothing harmful; it just won't send anywhere.
+        -->
+        <form class="contact-form" method="POST" action="#" accept-charset="UTF-8">
+          <div class="row">
+            <div>
+              <label for="first">First name *</label>
+              <input id="first" name="first_name" type="text" required>
+            </div>
+            <div>
+              <label for="last">Last name</label>
+              <input id="last" name="last_name" type="text">
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div style="margin-top:14px">
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+
+          <div class="actions">
+            <button class="cta" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Google Map -->
+    <div class="container map-embed reveal" data-animate="fade-up">
+      <iframe
+        title="GIS Radiology Map"
+        src="https://www.google.com/maps?q=40946%20US%20HWY%2019%20N%20STE%20101%2C%20Tarpon%20Springs%2C%20FL%2034689&output=embed"
+        width="100%" height="380" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding:28px 20px">
+      <div class="footer-grid">
+        <div><strong>GIS Radiology</strong><p class="small">Fast, accurate teleradiology reads with seamless operations.</p></div>
+        <div><strong>Company</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+          <li><a href="about.html">About</a></li><li><a href="news.html">News</a></li><li><a href="care.html">Customer Care</a></li></ul></div>
+        <div><strong>Services</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+          <li><a href="services.html">Subspecialty Interpretations</a></li><li><a href="services.html">Supported Modalities</a></li></ul></div>
+        <div><strong>Legal</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+          <li><a href="#">Privacy Policy</a></li><li><a href="#">Notice of Privacy Practices</a></li></ul></div>
+      </div>
+      <div class="small" style="margin-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <span>© <span id="y"></span> GIS Radiology</span><span>Site by Your Company</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

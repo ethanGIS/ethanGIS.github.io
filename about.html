@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — GIS Radiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css">
+</head>
+<body class="page">
+  <!-- Header (kept as-is from your file) -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="Global Imaging Specialists">
+      <!-- White logo (shows over dark hero) -->
+      <img class="on-dark"  src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+      <!-- Teal/Navy logo (shows on solid header / internal pages) -->
+    <img class="on-light" src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+    </a>
+
+    <button class="menu-btn" aria-label="Toggle menu" onclick="window.toggleMenu()">☰</button>
+
+    <nav>
+      <ul id="mainnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="who.html">Who We Serve</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="contact.html" class="cta">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="reveal" data-animate="fade-up" style="margin:0">About GIS Radiology</h1>
+      <p class="section-sub reveal" data-animate="fade-up" style="color:#dbe5f5;margin-top:8px">
+        Delivering fellowship-trained expertise, timely reads, and patient-centered care nationwide.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT CONTENT -->
+  <section id="about">
+    <div class="container" data-stagger=".06">
+
+      <!-- Alt block 1: Who we are -->
+      <section class="alt" data-stagger=".08" style="margin-top:10px">
+        <div class="media reveal" data-animate="fade-right">
+          <!-- Replace with your preferred image -->
+          <img src="assets/peaceofmind2.jpg" alt="Fellowship-trained radiologists and cardiologists">
+        </div>
+        <div class="copy reveal" data-animate="fade-left">
+          <h3 style="margin-top:0">Who We Are</h3>
+          <p class="small" style="margin:0;color:var(--brand-slate)">
+            Global Imaging Specialists (GIS) was founded in 2011 by a like-minded group of physicians aiming to provide
+            the highest caliber of professional radiology services and patient care. We are a team of fellowship-trained
+            and board-certified radiologists and cardiologists, providing subspecialty diagnostic reads and interventional services.
+          </p>
+        </div>
+      </section>
+
+      <!-- Alt block 2: Experience & communication -->
+      <section class="alt" data-stagger=".08">
+        <div class="copy reveal" data-animate="fade-right">
+          <h3 style="margin-top:0">Experience You Can Trust</h3>
+          <p class="small" style="margin:0 0 12px;color:var(--brand-slate)">
+            Our physicians have extensive experience across hospital and outpatient settings and deliver accurate,
+            effective reads in a timely manner. A multi-specialty approach and prompt communication with referring
+            physicians drive the best patient outcomes.
+          </p>
+          <ul class="klist">
+            <li>Clear, clinically relevant reporting</li>
+            <li>Direct consult lines & call-backs</li>
+            <li>Structured QA & peer review</li>
+          </ul>
+        </div>
+        <div class="media reveal" data-animate="fade-left">
+          <!-- Replace with your preferred image (can reuse your skeleton visual) -->
+          <img src="assets/facilityandoutpatient.jpg" alt="Hospital and outpatient imaging operations">
+        </div>
+      </section>
+
+      <!-- Alt block 3: Coverage & partnership -->
+      <section class="alt" data-stagger=".08">
+        <div class="media reveal" data-animate="fade-right">
+          <img src="assets/coverage.jpg" alt="24/7 coverage and scalable support">
+        </div>
+        <div class="copy reveal" data-animate="fade-left">
+          <h3 style="margin-top:0">Coverage & Partnership</h3>
+          <p class="small" style="margin:0 0 12px;color:var(--brand-slate)">
+            Given the versatility and size of our group, we offer around-the-clock coverage. As an integral part of the
+            clinical team, we support clinical education and community awareness—helping partners grow service lines and
+            referral bases for long-term stability and impact.
+          </p>
+          <ul class="klist">
+            <li>24/7/365 availability</li>
+            <li>Scalable daytime, after-hours, and overflow support</li>
+            <li>Growth-minded partnership with measurable results</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Quick stats strip (uses your .about-stats styles) -->
+      <div class="about-stats reveal" data-animate="fade-up">
+        <div class="stat">
+          <div class="value">2011</div>
+          <div class="label">Founded</div>
+        </div>
+        <div class="stat">
+          <div class="value">24/7/365</div>
+          <div class="label">Coverage</div>
+        </div>
+        <div class="stat">
+          <div class="value">Subspecialty</div>
+          <div class="label">Fellowship-trained team</div>
+        </div>
+        <div class="stat">
+          <div class="value">Partner-First</div>
+          <div class="label">Education & growth focus</div>
+        </div>
+      </div>
+
+      <!-- CTA band -->
+      <div class="cta-band reveal" data-animate="zoom-in" style="margin-top:28px">
+        <h3 style="margin:0">Want to learn more about our services?</h3>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="cta" href="services.html">View Services</a>
+          <a class="cta" href="contact.html" style="background:var(--brand-navy)">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer (kept as-is) -->
+  <footer>
+    <div class="container" style="padding:28px 20px">
+      <div class="footer-grid">
+        <div><strong>GIS Radiology</strong><p class="small">Fast, accurate teleradiology reads with seamless operations.</p></div>
+        <div><strong>Company</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+          <li><a href="about.html">About</a></li><li><a href="news.html">News</a></li><li><a href="care.html">Customer Care</a></li></ul></div>
+        <div><strong>Services</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+          <li><a href="services.html">Subspecialty Interpretations</a></li><li><a href="services.html">Supported Modalities</a></li></ul></div>
+        <div><strong>Legal</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+          <li><a href="#">Privacy Policy</a></li><li><a href="#">Notice of Privacy Practices</a></li></ul></div>
+      </div>
+      <div class="small" style="margin-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <span>© <span id="y"></span> GIS Radiology</span><span>Site by Your Company</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

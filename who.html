@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Who We Serve — GIS Radiology</title>
+  <meta name="description" content="Flexible teleradiology solutions for urgent care, outpatient imaging, mobile providers, hospitals, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css">
+</head>
+<body class="page">
+  <!-- Header (solid by default on .page) -->
+ <header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="Global Imaging Specialists">
+      <!-- White logo (shows over dark hero) -->
+      <img class="on-dark"  src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+      <!-- Teal/Navy logo (shows on solid header / internal pages) -->
+      <img class="on-light" src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+    </a>
+
+    <button class="menu-btn" aria-label="Toggle menu" onclick="window.toggleMenu()">☰</button>
+
+    <nav>
+      <ul id="mainnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="who.html">Who We Serve</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="contact.html" class="cta">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="reveal" data-animate="fade-up" style="margin:0 0 8px">Who We Serve</h1>
+      <p class="section-sub reveal" data-animate="fade-up">
+        Flexible teleradiology coverage and subspecialty expertise—tailored to your setting, your workflows, and your patients.
+      </p>
+      <div class="badges reveal" data-animate="zoom-in" style="margin-top:16px">
+        <a class="cta" href="contact.html">Talk to Sales</a>
+        <a class="secondary" href="services.html" style="margin-left:8px">See Services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem/Solution intro (two-up) -->
+  <section>
+    <div class="container grid-two" data-stagger=".08">
+      <div class="feature reveal" data-animate="fade-right">
+        <h3 style="margin-top:0">Operational challenges, solved.</h3>
+        <ul class="list">
+          <li>After-hours & weekend coverage gaps</li>
+          <li>Subspecialty reads on demand</li>
+          <li>Turnaround-time pressures</li>
+          <li>Scaling to new sites or modalities</li>
+          <li>Clean, HL7/DICOM-friendly workflows</li>
+        </ul>
+      </div>
+      <div class="feature reveal" data-animate="fade-left">
+        <h3 style="margin-top:0">What you can expect</h3>
+        <ul class="list">
+          <li>Board-certified, fellowship-trained radiologists</li>
+          <li>Fast, consistent TATs with QA</li>
+          <li>Dedicated account & onboarding support</li>
+          <li>Clear escalation paths and consults</li>
+          <li>24/7/365 nationwide coverage</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audience tiles -->
+  <section>
+    <div class="container">
+      <h2 class="section-title reveal" data-animate="fade-up">Organizations We Support</h2>
+      <p class="section-sub reveal" data-animate="fade-up">From single-site clinics to multi-state networks.</p>
+
+      <div class="tiles" data-stagger=".08">
+        <!-- 1 -->
+        <article class="tile reveal">
+          <img src="assets/urgent-care.jpg" alt="Urgent Care">
+          <div class="body">
+            <h3>Urgent Care</h3>
+            <p class="small">Rapid reads and clear communication for time-critical decisions.</p>
+            <a href="services.html">Learn more →</a>
+          </div>
+        </article>
+        <!-- 2 -->
+        <article class="tile reveal">
+          <img src="assets/outpatient.jpg" alt="Outpatient Imaging Centers">
+          <div class="body">
+            <h3>Outpatient Imaging Centers</h3>
+            <p class="small">Keep schedules moving with predictable TATs and clean reporting.</p>
+            <a href="services.html">Learn more →</a>
+          </div>
+        </article>
+        <!-- 3 -->
+        <article class="tile reveal">
+          <img src="assets/mobile.jpg" alt="Mobile Imaging Providers">
+          <div class="body">
+            <h3>Mobile Imaging Providers</h3>
+            <p class="small">Coverage that travels with your routes and patient populations.</p>
+            <a href="services.html">Learn more →</a>
+          </div>
+        </article>
+        <!-- 4 -->
+        <article class="tile reveal">
+          <img src="assets/primary-care2.jpg" alt="Primary Care / MSO">
+          <div class="body">
+            <h3>Primary Care / MSO</h3>
+            <p class="small">Chronic care–aware reads and scalable coordination.</p>
+            <a href="services.html">Learn more →</a>
+          </div>
+        </article>
+        <!-- 5 -->
+        <article class="tile reveal">
+          <img src="assets/hospital.jpg" alt="Hospitals & IDNs">
+          <div class="body">
+            <h3>Hospitals &amp; IDNs</h3>
+            <p class="small">Augment in-house teams with subspecialty backup and nights/weekends.</p>
+            <a href="services.html">Learn more →</a>
+          </div>
+        </article>
+        <!-- 6 -->
+        <article class="tile reveal">
+          <img src="assets/neuro.jpg" alt="Specialty Practices">
+          <div class="body">
+            <h3>Specialty Practices</h3>
+            <p class="small">MSK, Neuro, Women’s Imaging, Cardio—matched to your case mix.</p>
+            <a href="services.html">Learn more →</a>
+          </div>
+        </article>
+        <!-- 7 -->
+        <article class="tile reveal">
+          <img src="assets/virtual.jpg" alt="Telehealth & Virtual Clinics">
+          <div class="body">
+            <h3>Telehealth &amp; Virtual Clinics</h3>
+            <p class="small">Efficient connectivity and dependable turnarounds.</p>
+            <a href="services.html">Learn more →</a>
+          </div>
+        </article>
+        <!-- 8 -->
+        <article class="tile reveal">
+          <img src="assets/research.jpg" alt="Government & Research">
+          <div class="body">
+            <h3>Government &amp; Research</h3>
+            <p class="small">Protocol-adherent reads and compliant data handling.</p>
+            <a href="services.html">Learn more →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why GIS (icon bullets style) -->
+  <section>
+    <div class="container grid-two" data-stagger=".08">
+      <div class="feature reveal" data-animate="fade-right">
+        <h3 style="margin-top:0">Why organizations choose GIS</h3>
+        <ul class="list">
+          <li>Fellowship-trained subspecialists across modalities</li>
+          <li>Transparent SLAs and reporting</li>
+          <li>Collaborative case reviews and consult availability</li>
+          <li>Flexible agreements as you grow</li>
+          <li>HIPAA-compliant, secure portal & integrations</li>
+        </ul>
+      </div>
+      <div class="feature reveal" data-animate="fade-left">
+        <h3 style="margin-top:0">Coverage when you need it</h3>
+        <ul class="list">
+          <li>Daytime, evenings, nights, and weekends</li>
+          <li>Holiday and surge/overflow support</li>
+          <li>Short-term coverage during transitions</li>
+          <li>Full teleradiology or hybrid models</li>
+          <li>Nationwide service footprint</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section style="padding:48px 0">
+    <div class="container">
+      <div class="cta-band reveal" data-animate="zoom-in">
+        <h3 style="margin:0">Ready to tailor coverage to your setting?</h3>
+        <a class="cta" href="contact.html">Request a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (optional starter) -->
+  <section>
+    <div class="container" data-stagger=".06">
+      <h2 class="section-title reveal" data-animate="fade-up">FAQs</h2>
+      <div class="grid-two">
+        <div class="card reveal" data-animate="fade-right">
+          <h4 style="margin:0 0 6px">How fast are your turnarounds?</h4>
+          <p class="small">Turnaround times vary by study type and contract</p>
+        </div>
+        <div class="card reveal" data-animate="fade-left">
+          <h4 style="margin:0 0 6px">Can you integrate with our systems?</h4>
+          <p class="small">Yes—DICOM/HL7 friendly, with a HIPAA-compliant portal and support for common PACS/RIS setups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding:28px 20px">
+      <div class="footer-grid">
+        <div>
+          <strong>GIS Radiology</strong>
+          <p class="small">Fast, accurate teleradiology reads with seamless operations.</p>
+        </div>
+        <div>
+          <strong>Company</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="about.html">About</a></li>
+            <li><a href="care.html">Customer Care</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Services</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="services.html">Subspecialty Interpretations</a></li>
+            <li><a href="services.html">Supported Modalities</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Legal</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Notice of Privacy Practices</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="small" style="margin-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <span>© <span id="y"></span> Global Imaging Specialists, LLC. All Rights Reserved.</span>
+        <span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

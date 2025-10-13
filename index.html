@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GIS Radiology — Teleradiology That Works From Anywhere</title>
+  <meta name="description" content="Fast, accurate teleradiology with subspecialty interpretations and nationwide coverage." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="index.html" aria-label="Global Imaging Specialists">
+        <img class="on-dark"  src="assets/GIS Vector.svg"      alt="Global Imaging Specialists">
+        <img class="on-light" src="assets/GIS Blue vector.svg" alt="Global Imaging Specialists">
+      </a>
+
+      <!-- Mobile toggle (JS controls aria-expanded) -->
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <nav>
+        <ul id="site-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="who.html">Who We Serve</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="opportunities.html">Opportunities</a></li>
+          <li><a class="cta" href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="video-bg" aria-hidden="true">
+      <video class="bgvid" autoplay muted loop playsinline preload="auto">
+        <source src="assets/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="container">
+      <div data-animate="fade-right">
+        <div class="pill" data-animate="fade-up">✅ 24/7/365 • HIPAA-compliant portal</div>
+
+        <h1 class="delay-100" data-animate="fade-up">Teleradiology That Works From Anywhere</h1>
+
+        <p class="lead delay-200" data-animate="fade-up">
+          Streamlined care and seamless operations with subspecialty interpretations and fast turnaround times.
+        </p>
+
+        <!-- Waypoint that controls when the header turns solid -->
+        <div class="header-fade-trigger" aria-hidden="true"></div>
+
+        <div class="badges delay-300" data-animate="zoom-in">
+          <a class="cta" href="contact.html">Get Started</a>
+          <a class="secondary" href="services.html">See Services →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Serve -->
+  <section id="who">
+    <div class="container">
+      <h2 class="section-title" data-animate="fade-up">Who We Serve</h2>
+      <p class="section-sub" data-animate="fade-up">Flexible teleradiology solutions tailored to each setting.</p>
+
+      <div class="tiles" data-stagger=".10">
+        <article class="tile">
+          <img src="assets/urgent-care.jpg" alt="Urgent Care">
+          <div class="body">
+            <h3>Urgent Care</h3>
+            <p class="small">Speedy reads and real-time communication for time-critical care.</p>
+            <a href="who.html">Learn more →</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="assets/outpatient.jpg" alt="Outpatient Imaging">
+          <div class="body">
+            <h3>Outpatient Imaging</h3>
+            <p class="small">Keep overhead low and patient satisfaction high.</p>
+            <a href="who.html">Learn more →</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="assets/mobile.jpg" alt="Mobile Imaging">
+          <div class="body">
+            <h3>Mobile Imaging</h3>
+            <p class="small">24/7 coverage and e-signed reports across all modalities.</p>
+            <a href="who.html">Learn more →</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="assets/primary-care.jpg" alt="Primary Care / MSO">
+          <div class="body">
+            <h3>Primary Care / MSO</h3>
+            <p class="small">Radiology support that understands chronic care at scale.</p>
+            <a href="who.html">Learn more →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container grid-two" data-stagger=".10">
+
+      <div class="feature" data-animate="fade-right">
+        <h3>Subspecialty Interpretations</h3>
+        <ul class="list">
+          <li>Abdominal &amp; Genitourinary Radiology</li>
+          <li>Musculoskeletal Radiology</li>
+          <li>Nuclear Medicine</li>
+          <li>Pediatric Radiology</li>
+          <li>Emergency Radiology</li>
+          <li>Interventional Radiology</li>
+          <li>Cardiovascular Radiology</li>
+          <li>Neuroradiology</li>
+          <li>Women’s Radiology</li>
+          <li>Obstetrical Radiology</li>
+        </ul>
+        <p class="disclaimer"><em>Additional subspecialties available upon request.</em></p>
+      </div>
+
+      <div class="feature" data-animate="fade-left">
+        <h3>Supported Modalities</h3>
+        <ul class="list">
+          <li>X-ray</li>
+          <li>CT</li>
+          <li>MRI</li>
+          <li>Ultrasound</li>
+          <li>Mammography</li>
+          <li>DEXA</li>
+        </ul>
+        <p class="disclaimer"><em>Additional modalities supported based on client needs.</em></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="cta-band-section">
+    <div class="container">
+      <div class="cta-band" data-animate="zoom-in">
+        <h3 style="margin:0">Ready to elevate patient care with faster reads?</h3>
+        <a class="cta" href="contact.html">Contact us Today!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="grid-two" data-stagger=".08">
+        <div data-animate="fade-right">
+          <h2 class="section-title">About</h2>
+          <p class="section-sub">
+            At GIS, our fellowship-trained radiologists and cardiologists work closely with referring physicians to provide timely, accurate interpretations and interventional services. We are committed to advancing patient care through expertise, collaboration, and 24/7 nationwide coverage.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat">
+              <div class="value">2011</div>
+              <div class="label">Founded</div>
+            </div>
+            <div class="stat">
+              <div class="value">24/7/365</div>
+              <div class="label">Nationwide Coverage</div>
+            </div>
+            <div class="stat">
+              <div class="value">Subspecialty</div>
+              <div class="label">Fellowship-Trained Team</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="illustration" data-animate="fade-left">
+          <img src="assets/yacoub.jpg" alt="GIS Radiology Team">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Care -->
+  <section id="care">
+    <div class="container">
+      <h2 class="section-title" data-animate="fade-up">Customer Care</h2>
+      <p class="section-sub" data-animate="fade-up">
+        Portal access, onboarding, SLAs, and responsive support—built to keep your operations running smoothly.
+      </p>
+
+      <div class="care-cards" data-stagger=".10">
+        <div class="care-card" data-animate="fade-up">
+          <span class="kicker">24/7/365</span>
+          <div class="title">Portal Access</div>
+          <p class="desc">Secure, HIPAA-compliant workflow with on-demand report retrieval and status tracking.</p>
+        </div>
+
+        <div class="care-card alt" data-animate="fade-up">
+          <span class="kicker">Onboarding</span>
+          <div class="title">Fast Implementation</div>
+          <p class="desc">Streamlined credentialing, tech setup, and staff training tailored to your site.</p>
+        </div>
+
+        <div class="care-card" data-animate="fade-up">
+          <span class="kicker">SLAs</span>
+          <div class="title">Committed Turnaround</div>
+          <p class="desc">Clear escalation paths and service guarantees backed by real-time communication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="grid-two">
+        <div data-animate="fade-right">
+          <h2 class="section-title">Contact</h2>
+          <p class="small">40946 US HWY 19 N STE 101 • Tarpon Springs, FL 34689 • P: (813).720.7237</p>
+          <p class="small">For general inquiries or partnership opportunities, please fill out the form or reach us directly by phone/email.</p>
+        </div>
+
+        <div class="card" data-animate="fade-left">
+          <h3 style="margin-top:0">Send a Message</h3>
+          <form onsubmit="event.preventDefault(); alert('Thanks, we\'ll be in touch!')">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <input placeholder="First name" required style="padding:12px;border:1px solid #d9e0ea;border-radius:10px">
+              <input placeholder="Last name" required style="padding:12px;border:1px solid #d9e0ea;border-radius:10px">
+            </div>
+            <div style="margin-top:12px">
+              <input type="email" placeholder="Work email" required style="width:100%;padding:12px;border:1px solid #d9e0ea;border-radius:10px">
+            </div>
+            <div style="margin-top:12px">
+              <textarea placeholder="How can we help?" rows="4" style="width:100%;padding:12px;border:1px solid #d9e0ea;border-radius:10px"></textarea>
+            </div>
+            <button class="cta" style="margin-top:12px">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding:28px 20px">
+      <div class="footer-grid">
+        <div>
+          <strong>GIS Radiology</strong>
+          <p class="small">Fast, accurate teleradiology reads with seamless operations.</p>
+        </div>
+        <div>
+          <strong>Company</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="about.html">About</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="care.html">Customer Care</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Services</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="services.html">Subspecialty Interpretations</a></li>
+            <li><a href="services.html">Supported Modalities</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Legal</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Notice of Privacy Practices</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="small" style="margin-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <span>© <span id="y"></span> Global Imaging Specialists, LLC. All Rights Reserved.</span>
+        <span>Site by Your Company</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Site JS (handles menu, header flip, video, reveals) -->
+  <script src="assets/site.js"></script>
+</body>
+</html>

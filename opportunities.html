@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Opportunities — GIS Radiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css">
+
+  <!-- SimpleTexting default form styles -->
+  <link href="https://app2.simpletexting.com/join-web-form/style-new.css" rel="stylesheet" type="text/css" />
+
+  <!-- Page-local polish (scoped) -->
+  <style>
+    .opp-intro{
+      text-align:center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .opp-card{
+      background: var(--brand-white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      max-width: 760px;
+      margin: 18px auto 0;
+    }
+    /* Let the SimpleTexting block breathe inside our card */
+    .opp-card .st-signupform-content{
+      box-shadow: none;           /* our card already has one */
+      border-radius: 12px;
+      padding: 0;                 /* we’ll control spacing with our card */
+      background: transparent;    /* blend into our card */
+    }
+    .opp-card .st-signupform-content .step1-form,
+    .opp-card .st-signupform-content footer{
+      padding: 24px;
+      background: #fff;
+      border-radius: 12px;
+    }
+    .opp-card h3{ margin:0 0 14px; }
+
+    .opp-note{ color: var(--brand-slate); margin-top: 10px; font-size: 14px; text-align:center; }
+    @media (min-width:1300px){
+      .opp-card{ padding: 30px; max-width: 820px; }
+      .opp-intro h2{ font-size: 36px; }
+      .opp-intro p{ font-size: 18px; }
+    }
+  </style>
+</head>
+<body class="page">
+  <!-- Header -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="Global Imaging Specialists">
+      <!-- White logo (shows over dark hero) -->
+      <img class="on-dark"  src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+      <!-- Teal/Navy logo (shows on solid header / internal pages) -->
+      <img class="on-light" src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+    </a>
+
+    <button class="menu-btn" aria-label="Toggle menu" onclick="window.toggleMenu()">☰</button>
+
+    <nav>
+      <ul id="mainnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="who.html">Who We Serve</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="contact.html" class="cta">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="reveal" data-animate="fade-up" style="margin:0">Opportunities</h1>
+      <p class="section-sub reveal" data-animate="fade-up" style="color:#dbe5f5;margin-top:8px">
+        Please fill out the form below if you’re interested in starting a career with GIS.
+      </p>
+    </div>
+  </section>
+
+  <!-- Opportunities content -->
+  <section>
+    <div class="container" data-stagger=".06">
+
+      <div class="opp-intro reveal" data-animate="fade-up">
+        <h2 class="section-title" style="margin:0">Join the GIS Radiology Network</h2>
+        <p class="section-sub" style="margin:8px auto 0">
+          Submit your info and we’ll follow up with current openings and credentialing details.
+        </p>
+      </div>
+
+      <!-- SimpleTexting form embedded inline (no iframe) -->
+      <div class="opp-card reveal" data-animate="fade-up">
+        <h3 style="margin-top:0">Submit Your Information</h3>
+
+        <!-- START SimpleTexting embed -->
+        <div class="st-signupform">
+          <form
+            id="st-join-web-form-68d6cee0092d211d8c4054ee"
+            class="st-signupform-content"
+            action="https://app2.simpletexting.com/join/joinContact"
+            method="POST"
+          >
+            <div class="step1-form">
+              <div class="required">
+                <label class="st-signupform__label" for="phone">
+                  Phone
+                  <span class="required-mark">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.84534 5.66669H1.00004C0.631851 5.66669 0.333374 5.36821 0.333374 5.00002C0.333374 4.63183 0.631851 4.33335 1.00004 4.33335H3.84534L2.42269 1.86925C2.2386 1.55039 2.34785 1.14266 2.66671 0.958568C2.98557 0.774473 3.3933 0.883724 3.57739 1.20259L5.00004 3.66669L6.42269 1.20259C6.60679 0.883724 7.01451 0.774473 7.33337 0.958568C7.65224 1.14266 7.76149 1.55039 7.57739 1.86925L6.15474 4.33335H9.00004C9.36823 4.33335 9.66671 4.63183 9.66671 5.00002C9.66671 5.36821 9.36823 5.66669 9.00004 5.66669H6.15474L7.57739 8.13079C7.76149 8.44965 7.65224 8.85738 7.33337 9.04147C7.01451 9.22557 6.60679 9.11632 6.42269 8.79745L5.00004 6.33335L3.57739 8.79745C3.3933 9.11632 2.98557 9.22557 2.66671 9.04147C2.34785 8.85738 2.2386 8.44965 2.42269 8.13079L3.84534 5.66669Z" fill="#E63655"/>
+                    </svg>
+                  </span>
+                </label>
+                <input id="phone" name="phone" type="text" placeholder="(XXX) XXX-XXXX" maxlength="1600" data-type="phone"/>
+              </div>
+              <div id="js-error-phone" class="st-error-message"></div>
+
+              <div>
+                <label class="st-signupform__label" for="firstname">Contact first name</label>
+                <input id="firstname" name="firstname" type="text" placeholder="John" maxlength="1600" data-type="text"/>
+              </div>
+              <div id="js-error-firstname" class="st-error-message"></div>
+
+              <div>
+                <label class="st-signupform__label" for="lastname">Contact last name</label>
+                <input id="lastname" name="lastname" type="text" placeholder="Smith" maxlength="1600" data-type="text"/>
+              </div>
+              <div id="js-error-lastname" class="st-error-message"></div>
+
+              <div>
+                <label class="st-signupform__label" for="email">Contact email</label>
+                <input id="email" name="email" type="text" placeholder="email@address.com" maxlength="1600" data-type="text"/>
+              </div>
+              <div id="js-error-email" class="st-error-message"></div>
+
+              <div class="st-terms-and-conditions">
+                <div class="st-checkbox terms-checkbox">
+                  <input id="terms-agreed-checkbox-68d6cee0092d211d8c4054ee" type="checkbox" name="terms-agreed" />
+                  <label class="st-terms-and-conditions-text" for="terms-agreed-checkbox-68d6cee0092d211d8c4054ee">
+                    Terms and conditions
+                  </label>
+                </div>
+                <div class="st-terms-and-conditions-caption st-font-caption">
+                  <div>
+                    I agree to receive promotional messages from GIS Radiology up to 4 Msgs/Month. This agreement isn't a condition of any purchase.
+                    I also agree to the
+                    <a href="https://app2.simpletexting.com/web-forms/terms/68d6cee0092d211d8c4054ee" target="_blank">Terms of Service</a>
+                    and
+                    <a href="https://app2.simpletexting.com/web-forms/privacy-policy/68d6cee0092d211d8c4054ee" target="_blank">Privacy Policy</a>.
+                    Msg &amp; Data rates may apply.
+                  </div>
+                  <div>
+                    By submitting this form, I agree that my mobile information will not be shared with third parties/affiliates for marketing/promotional purposes.
+                    All the above categories exclude my text messaging originator opt-in data and consent; this information will not be shared with any third parties,
+                    except for the necessary opt-in data required to facilitate the SMS service.
+                  </div>
+                  <div>Text STOP to opt-out. Text HELP for assistance. it@gisrads.com.</div>
+                </div>
+                <div class="st-signupform-terms-agreed-error st-hidden">
+                  You have to agree on terms in order to proceed to the subscription.
+                </div>
+              </div>
+
+              <div class="st-join-web-form-submit-button-box">
+                <button id="subscribeNow" type="submit">Subscribe now</button>
+                <p class="st-signupform-server-error-message st-color-red st-hidden"></p>
+              </div>
+            </div>
+
+            <div class="step2-confirmationText" style="display: none;">
+              <p>Thank you for reaching out about opportunities at GIS. We&#39;ll be in touch shortly!</p>
+            </div>
+
+            <footer>
+              SMS marketing powered by
+              <a href="https://www.simpletexting.com" title="SMS marketing - SimpleTexting.com">SimpleTexting</a>
+            </footer>
+          </form>
+        </div>
+
+        <script>
+          (function joinWebForm(
+            win, doc, webFormId, formFields,
+            DUPLICATE_EMAIL_EXCEPTION, DUPLICATE_PHONE_EXCEPTION,CUSTOM_FIELDS_VALIDATION_EXCEPTION,
+          ) {
+            const XHR = ('onload' in new win.XMLHttpRequest()) ? win.XMLHttpRequest : win.XDomainRequest;
+            const fieldErrorClassName = 'st-signupform-validation-error';
+            function getFormServerErrorMessage(form) { return form.querySelector('.st-signupform-server-error-message'); }
+            function getFormTermsAgreedError(form) { return form.querySelector('.st-signupform-terms-agreed-error'); }
+            function getSubmitButton(form) { return form.querySelector('#subscribeNow'); }
+            function setServerErrorMessage(form, message) {
+              const el = getFormServerErrorMessage(form);
+              el.innerText = message;
+              if (message) { el.classList.remove("st-hidden"); } else { el.classList.add("st-hidden"); }
+            }
+            function isTermsAgreedAccepted(form) { return form.querySelector('input[name="terms-agreed"]').checked; }
+            function showTermsAgreedError(form) { getSubmitButton(form).disabled = false; getFormTermsAgreedError(form).classList.remove("st-hidden"); }
+            function hideTermsAgreedError(form) { getFormTermsAgreedError(form).classList.add("st-hidden"); }
+            function clearFormErrors(form) {
+              const fields = form.querySelectorAll(`.${fieldErrorClassName}`);
+              fields.forEach(function (field) {
+                field.classList.remove(fieldErrorClassName);
+                const fieldError = form.querySelector(`#js-error-${field.name}`);
+                fieldError.innerText = '';
+              });
+              setServerErrorMessage(form, ''); hideTermsAgreedError(form);
+            }
+            function collectFormData(form) {
+              const formData = new FormData(form);
+              const data = { webFormId, fieldValues: {}, listIds: [] };
+              formData.forEach(function (value, name) {
+                if (name === 'list') data.listIds.push(value);
+                else if (name === 'phone') data.fieldValues[name] = value.replace(/\D/g, '');
+                else if (!['terms-agreed', 'webFormId'].includes(name)) data.fieldValues[name] = value;
+              });
+              return data;
+            }
+            function convertServerErrorMessage(fieldName, errorMessage) {
+              const field = formFields.find(formField => formField.name === fieldName) || {label: fieldName, type:''};
+              if (errorMessage === 'Required field value is empty') return `${field.label} is required`;
+              if (field.type === 'phone') return `${field.label} is required in (XXX) XXX-XXXX format`;
+              if (field.type === 'date') return `${field.label} is required in MM/DD/YYYY format`;
+              if (field.type === 'zipCode') return `${field.label} is required in XXXXX format`;
+              if (field.type === 'url') return `${field.label} is required in http(s)://xxxxxx.xx format`;
+              if (field.type === 'gender') return `${field.label} is required in M/F format`;
+              if (field.type === 'number') return `${field.label} is required in number format`;
+              if (field.name === 'birthday') return `${field.label} is required in MM/DD/YYYY format`;
+              return errorMessage;
+            }
+            function parseServerValidationError(response) {
+              try {
+                const error = win.JSON.parse(response);
+                if (error.code === DUPLICATE_PHONE_EXCEPTION) return [{ fieldName:'phone', errorMessage:'Phone number already exists.' }];
+                if (error.code === DUPLICATE_EMAIL_EXCEPTION) return [{ fieldName:'email', errorMessage:'Email already exists.' }];
+                if (error.code === CUSTOM_FIELDS_VALIDATION_EXCEPTION)
+                  return Object.entries(error.reasons).map(([key, value]) => ({ fieldName:key, errorMessage: convertServerErrorMessage(key, value) }));
+                return [{ fieldName:error.invalidValueName || '', errorMessage: convertServerErrorMessage(error.invalidValueName,'Validation error.') }];
+              } catch(_) {
+                return [{ fieldName:'', errorMessage:'Validation error.' }];
+              }
+            }
+            function handleLoadForm(form) {
+              const submitButton = getSubmitButton(form);
+              if (this.status === 200) {
+                const formData = new FormData(form);
+                const txt = form.querySelector('.step2-confirmationText');
+                txt.innerText = txt.innerText.replace('%%phone%%', formData.get('phone'));
+                form.querySelector('.step1-form').style.display = 'none';
+                txt.style.display = 'block';
+                form.reset();
+              } else if (this.status === 418) {
+                submitButton.disabled = false;
+                const validations = parseServerValidationError(this.responseText);
+                if (validations.length > 0) {
+                  if (validations[0].fieldName) {
+                    validations.forEach((v) => {
+                      const fields = form.querySelectorAll(`input[name="${v.fieldName}"], textarea[name="${v.fieldName}"]`);
+                      fields.forEach((f) => f.classList.add(fieldErrorClassName));
+                      const fieldError = form.querySelector(`#js-error-${v.fieldName}`);
+                      if (fieldError) fieldError.innerText = v.errorMessage;
+                    });
+                  } else setServerErrorMessage(form, validations[0].errorMessage);
+                } else setServerErrorMessage(form, 'Internal Error. Please, try later.');
+              } else {
+                submitButton.disabled = false;
+                setServerErrorMessage(form, 'Internal Error. Please, try later.');
+              }
+            }
+            function handleErrorForm(form) { const submitButton = getSubmitButton(form); submitButton.disabled = false; setServerErrorMessage(form, 'Internal Error. Please, try later.'); }
+            function sendForm(form) {
+              const data = collectFormData(form);
+              const url = `${form.action}?r=${Date.now()}`;
+              const request = new XHR();
+              request.open(form.method, url);
+              request.onload = function(){ handleLoadForm.call(this, form); };
+              request.onerror = function(){ handleErrorForm.call(this, form); };
+              request.ontimeout = function(){ handleErrorForm.call(this, form); };
+              try { request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8'); } catch(_) {}
+              request.send(win.JSON.stringify(data));
+            }
+            function handleSubmitForm(event) {
+              event.preventDefault();
+              const form = event.target;
+              const submitButton = getSubmitButton(form);
+              try {
+                submitButton.disabled = true;
+                clearFormErrors(form);
+                if (!isTermsAgreedAccepted(form)) { showTermsAgreedError(form); }
+                else { sendForm(form); }
+              } catch (e) {
+                console.error(e);
+                setServerErrorMessage(form, 'Internal Error. Please, try later.');
+                submitButton.disabled = false;
+              }
+            }
+            function formatPhone(value){ const n=value.replace(/\D/g,''); const a=n.substring(0,3), b=n.substring(3,6), c=n.substring(6,10); return (a?`(${a}`:'')+(b?`) ${b}`:'')+(c?`-${c}`:''); }
+            function handleChangePhoneField(e){ e.currentTarget.value = formatPhone(e.currentTarget.value); }
+            function handleLoad(){
+              const forms = doc.querySelectorAll(`#st-join-web-form-${webFormId}`);
+              for(let i=0;i<forms.length;i++){
+                const form=forms[i];
+                if (!form.hasAttribute('data-form-initialized')){
+                  form.setAttribute('data-form-initialized', true);
+                  form.addEventListener('submit', handleSubmitForm);
+                  form.querySelectorAll('input[data-type="phone"]').forEach(f=>f.addEventListener('input', handleChangePhoneField));
+                  const agreed = form.querySelector(`#terms-agreed-checkbox-${webFormId}`); agreed.id += `-${i.toString(10)}`;
+                  form.querySelector('.st-terms-and-conditions-text').setAttribute('for', agreed.id);
+                }
+              }
+            }
+            win.addEventListener('load', handleLoad);
+          })(
+            window, document, '68d6cee0092d211d8c4054ee',
+            [
+              {"name":"phone","label":"Phone","placeholder":"(XXX) XXX-XXXX","type":"phone","value":"","required":true},
+              {"name":"firstname","label":"Contact first name","placeholder":"John","type":"text","value":"","required":false},
+              {"name":"lastname","label":"Contact last name","placeholder":"Smith","type":"text","value":"","required":false},
+              {"name":"email","label":"Contact email","placeholder":"email@address.com","type":"text","value":"","required":false}
+            ],
+            'DuplicateContactEmailException','DuplicateContactPhoneException','CustomFieldsValidationException'
+          );
+        </script>
+        <!-- END SimpleTexting embed -->
+
+      </div>
+
+     
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding:28px 20px">
+      <div class="footer-grid">
+        <div><strong>GIS Radiology</strong><p class="small">Fast, accurate teleradiology reads with seamless operations.</p></div>
+        <div><strong>Company</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+          <li><a href="about.html">About</a></li><li></li><li><a href="care.html">Customer Care</a></li></ul></div>
+        <div><strong>Services</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+          <li><a href="services.html">Subspecialty Interpretations</a></li><li><a href="services.html">Supported Modalities</a></li></ul></div>
+        <div><strong>Legal</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+          <li><a href="#">Privacy Policy</a></li><li><a href="#">Notice of Privacy Practices</a></li></ul></div>
+      </div>
+      <div class="small" style="margin-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <span>© <span id="y"></span> Global Imaging Specialists, LLC. All Rights Reserved.</span><span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services — GIS Radiology</title>
+  <meta name="description" content="Subspecialty interpretations, supported modalities, dependable turnarounds, and 24/7 coverage from GIS Radiology." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css">
+</head>
+<body class="page">
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="Global Imaging Specialists">
+      <!-- White logo (shows over dark hero) -->
+      <img class="on-dark"  src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+      <!-- Teal/Navy logo (shows on solid header / internal pages) -->
+      <img class="on-light" src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+    </a>
+
+    <button class="menu-btn" aria-label="Toggle menu" onclick="window.toggleMenu()">☰</button>
+
+    <nav>
+      <ul id="mainnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="who.html">Who We Serve</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="contact.html" class="cta">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="reveal" data-animate="fade-up" style="margin:0 0 8px">Services</h1>
+      <p class="section-sub reveal" data-animate="fade-up">
+        Fellowship-trained subspecialists, dependable TATs, and seamless workflows tailored to your sites.
+      </p>
+    </div>
+  </section>
+
+  <!-- Clean Services content (no sidebar, no intro card/button) -->
+  <section>
+    <div class="container" data-stagger=".06">
+
+      <h2 class="section-title reveal" data-animate="fade-up" style="margin-top:0">What Makes Us Different</h2>
+
+      <!-- Alternating image + copy sections -->
+      <section class="alt" data-stagger=".08">
+        <div class="media reveal" data-animate="fade-right">
+          <img src="assets/peaceofmind.jpg" alt="Radiologist coverage and surge support">
+        </div>
+        <div class="copy reveal" data-animate="fade-left">
+          <h3 style="margin-top:0">Peace of Mind</h3>
+          <ul class="klist">
+            <li>On-demand availability of radiologists</li>
+            <li>24/7/365 coverage windows</li>
+            <li>STAT workflows with expedited routing</li>
+            <li>Dependable surge/overflow support</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="alt" data-stagger=".08">
+        <div class="copy reveal" data-animate="fade-right">
+          <h3 style="margin-top:0">Patient Care</h3>
+          <ul class="klist">
+            <li>Clear &amp; clinically relevant reporting</li>
+            <li>TATs aligned to modality &amp; acuity</li>
+            <li>Consult callbacks &amp; direct lines</li>
+            <li>QA &amp; peer-review program</li>
+          </ul>
+        </div>
+        <div class="media reveal" data-animate="fade-left">
+          <img src="assets/patient-care.jpg" alt="Patient-first reporting and QA">
+        </div>
+      </section>
+
+      <section class="alt" data-stagger=".08">
+        <div class="media reveal" data-animate="fade-right">
+          <img src="assets/flexibility.jpg" alt="Flexible contracts and integrations">
+        </div>
+        <div class="copy reveal" data-animate="fade-left">
+          <h3 style="margin-top:0">Flexibility</h3>
+          <ul class="klist">
+            <li>No min/max volume requirements</li>
+            <li>We cover vacations—no locums needed</li>
+            <li>HL7/DICOM integrations or secure portal</li>
+            <li>Role-based access &amp; delivery options</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="grid-two" data-stagger=".08" style="margin-top:18px">
+        <div class="feature reveal" data-animate="fade-right" style="background:#eaf0f7">
+          <h3 style="margin-top:0">Service Levels &amp; TATs</h3>
+          <ul class="small" style="margin:0;line-height:1.9">
+            <li>Published SLAs with ongoing monitoring</li>
+            <li>STAT/prelim targets for ER/urgent studies</li>
+            <li>Final reports within agreed time windows</li>
+            <li>Escalation matrix for complex cases</li>
+          </ul>
+        </div>
+        <div class="feature reveal" data-animate="fade-left" style="background:#eaf0f7">
+          <h3 style="margin-top:0">Compliance &amp; Security</h3>
+          <ul class="small" style="margin:0;line-height:1.9">
+            <li>HIPAA-compliant workflows &amp; portal</li>
+            <li>Secure image transfer, audit trails</li>
+            <li>Access controls &amp; least-privilege model</li>
+            <li>Credentialing support as needed</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Services Offered (two-column cards) -->
+      <section id="services-offered" class="services-banner">
+        <div class="container">
+          <h2 class="reveal" data-animate="fade-up">Services Offered</h2>
+        </div>
+        <div class="services-cards" data-stagger=".08">
+          <article class="svc-card reveal" data-animate="fade-right">
+            <h3>Subspecialty Interpretations</h3>
+            <ul class="svc-bullets">
+              <li>Abdominal &amp; Genitourinary Radiology</li>
+              <li>Musculoskeletal Radiology</li>
+              <li>Nuclear Medicine</li>
+              <li>Pediatric Radiology</li>
+              <li>Emergency Radiology</li>
+              <li>Interventional Radiology</li>
+              <li>Cardiovascular Radiology</li>
+              <li>Neuroradiology</li>
+              <li>Women’s Radiology</li>
+              <li>Obstetrical Radiology</li>
+            </ul>
+          </article>
+
+          <article class="svc-card reveal" data-animate="fade-left">
+            <h3>Supported Modalities</h3>
+            <ul class="svc-bullets">
+              <li>X-ray</li>
+              <li>CT</li>
+              <li>MRI</li>
+              <li>Ultrasound</li>
+              <li>Mammography</li>
+              <li>DEXA</li>
+              <li>Additional modalities by request</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <div class="cta-band reveal" data-animate="zoom-in" style="margin-top:28px">
+        <h3 style="margin:0">Ready to experience the GIS difference?</h3>
+        <a class="cta" href="contact.html">Contact us today!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding:28px 20px">
+      <div class="footer-grid">
+        <div>
+          <strong>GIS Radiology</strong>
+          <p class="small">Fast, accurate teleradiology reads with seamless operations.</p>
+        </div>
+        <div>
+          <strong>Company</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="about.html">About</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="care.html">Customer Care</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Services</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="services.html">Subspecialty Interpretations</a></li>
+            <li><a href="services.html">Supported Modalities</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Legal</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Notice of Privacy Practices</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="small" style="margin-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <span>© <span id="y"></span>  Global Imaging Specialists, LLC. All Rights Reserved.</span>
+        <span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
