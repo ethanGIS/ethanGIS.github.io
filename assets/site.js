@@ -123,12 +123,15 @@
   };
   const applyScrolled = (scrolled) => header.classList.toggle('scrolled', scrolled);
 
+  let obs; // keep a reference so we can disconnect on reattach
   const attachIO = () => {
     const headerH = getHeaderH();
 
+    if (obs) { try { obs.disconnect(); } catch {} obs = undefined; }
+
     if ('IntersectionObserver' in window) {
       // Flip when the bottom sentinel scrolls above the header line
-      const obs = new IntersectionObserver(
+      obs = new IntersectionObserver(
         (entries) => entries.forEach((e) => applyScrolled(!e.isIntersecting)),
         { root: null, rootMargin: `-${headerH}px 0px 0px 0px`, threshold: 0 }
       );
@@ -148,7 +151,6 @@
   // Run and also adjust on resize (header height can change on responsive breakpoints)
   attachIO();
   window.addEventListener('resize', () => {
-    // Re-run quickly on resize without duplicating observers
     applyScrolled(false);
     attachIO();
   });
@@ -159,37 +161,69 @@
   const vid = document.querySelector('.video-bg video');
   if (!vid) return;
 
-  // Keep autoplay happy across mobile browsers
-  vid.muted = true;
-  vid.autoplay = true;
-  vid.loop = true;
-  vid.preload = 'auto';
-  vid.setAttribute('playsinline', '');
-  vid.setAttribute('webkit-playsinline', '');
+  // Ensure autoplay policy compatibility
+  const primeAttributes = () => {
+    vid.muted = true;               // required for autoplay on mobile
+    vid.autoplay = true;
+    vid.loop = true;
+    vid.preload = 'auto';
+    vid.setAttribute('playsinline', '');
+    vid.setAttribute('webkit-playsinline', '');
+  };
+  primeAttributes();
 
   const markLoaded = () => vid.classList.add('loaded');
-  const tryPlay = () => {
+
+  const tryPlay = (nudge = false) => {
+    primeAttributes();
+    // Safari sometimes needs repeated nudges
     const p = vid.play && vid.play();
-    if (p && p.catch) p.catch(() => {/* ignore; user gesture will retry */});
+    if (p && p.catch) p.catch(() => {
+      if (nudge) {
+        setTimeout(() => { vid.muted = true; vid.play().catch(()=>{}); }, 120);
+      }
+    });
   };
 
-  // If HTML added onloadeddata inline, great. These back it up.
-  vid.addEventListener('loadeddata', () => { markLoaded(); tryPlay(); }, { once: true });
-  vid.addEventListener('canplay',      () => { markLoaded(); tryPlay(); }, { once: true });
-  vid.addEventListener('canplaythrough', tryPlay);
+  // If the video is already buffered by the time JS runs
+  if (vid.readyState >= 2) { // HAVE_CURRENT_DATA
+    markLoaded();
+    tryPlay(true);
+  }
 
-  // Gentle nudges for stricter autoplay policies
+  // Normal path
+  const onLoaded = () => { markLoaded(); tryPlay(true); };
+  vid.addEventListener('loadedmetadata', onLoaded, { once: true });
+  vid.addEventListener('loadeddata', onLoaded, { once: true });
+  vid.addEventListener('canplay', onLoaded, { once: true });
+  vid.addEventListener('canplaythrough', () => tryPlay(true));
+
+  // Gentle nudges to satisfy stricter autoplay policies
   ['pointerdown','touchstart','keydown','scroll'].forEach(evt =>
-    window.addEventListener(evt, tryPlay, { once:true, passive:true })
+    window.addEventListener(evt, () => tryPlay(true), { once:true, passive:true })
   );
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
-  window.addEventListener('load', tryPlay);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(true); });
+  window.addEventListener('load', () => tryPlay(true));
 
-  // Safety: if no event fires (some previews), lightly show the first frame
+  // Watchdog: periodically check readiness shortly after load
+  let attempts = 0;
+  const tick = () => {
+    if (vid.readyState >= 2) { markLoaded(); tryPlay(); return; }
+    if (++attempts < 20) setTimeout(tick, 150);
+  };
+  tick();
+
+  // If the video errors, remove it so the CSS image fallback shows cleanly
+  vid.addEventListener('error', () => {
+    // Optional: console.warn('Hero video error:', vid.error);
+    try { vid.parentElement && vid.parentElement.removeChild(vid); } catch {}
+  });
+
+  // Safety: if no event fires (some preview engines), lightly reveal the first frame
   setTimeout(() => {
     if (!vid.classList.contains('loaded')) {
       try { vid.currentTime = 0; } catch {}
-      vid.style.opacity = (vid.style.opacity || '') ? vid.style.opacity : '0.001';
+      if (!vid.style.opacity) vid.style.opacity = '0.001';
     }
   }, 800);
 })();
@@ -198,6 +232,13 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback: just reveal everything immediately
+    document.querySelectorAll('[data-animate], .reveal, .tile, .feature, .card')
+      .forEach((el) => el.classList.add('is-inview'));
+    return;
+  }
 
   const obs = new IntersectionObserver(
     (entries) => {
