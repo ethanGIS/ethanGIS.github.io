@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GIS Radiology — Teleradiology That Works From Anywhere</title>
   <meta name="description" content="Fast, accurate teleradiology with subspecialty interpretations and nationwide coverage." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- (Optional) Preload helps first paint when the file is small enough -->
+  <link rel="preload" as="video" href="assets/hero.mp4" type="video/mp4">
+
   <link rel="stylesheet" href="assets/base.css">
 </head>
 <body>
@@ -42,8 +47,18 @@
   <section class="hero" id="home">
     <!-- Fallback image is set in CSS on .hero; this layer holds the actual video -->
     <div class="video-bg" aria-hidden="true">
-      <video class="bgvid" autoplay muted loop playsinline preload="auto" poster="assets/hero.jpg">
-        <!-- Keep MP4; optionally add a WebM next to it for Chrome/Firefox if you encode one -->
+      <video
+        class="bgvid"
+        muted
+        autoplay
+        loop
+        playsinline
+        webkit-playsinline
+        preload="auto"
+        poster="assets/hero.jpg"
+        onloadeddata="this.classList.add('loaded'); this.muted = true; this.play().catch(()=>{});"
+      >
+        <!-- If you later add a WebM, uncomment the next line (browsers will fall back to MP4 if missing) -->
         <!-- <source src="assets/hero.webm" type="video/webm"> -->
         <source src="assets/hero.mp4" type="video/mp4">
       </video>
@@ -119,7 +134,6 @@
   <!-- Services -->
   <section id="services">
     <div class="container grid-two" data-stagger=".10">
-
       <div class="feature" data-animate="fade-right">
         <h3>Subspecialty Interpretations</h3>
         <ul class="list">
@@ -149,7 +163,6 @@
         </ul>
         <p class="disclaimer"><em>Additional modalities supported based on client needs.</em></p>
       </div>
-
     </div>
   </section>
 
@@ -294,29 +307,45 @@
     </div>
   </footer>
 
-  <!-- Site JS (handles menu, header flip, video, reveals) -->
-  <script src="assets/site.js"></script>
+  <!-- Site JS (menu, header flip, video, reveals) -->
+  <script src="assets/site.js" defer></script>
 
-  <!-- Lightweight inline fix: fade in video when ready & make sure it plays muted inline -->
+  <!-- Inline safety: fade-in + autoplay retries (works even if external JS fails) -->
   <script>
     (() => {
       const v = document.querySelector('.bgvid');
       if (!v) return;
 
       const markLoaded = () => v.classList.add('loaded');
+      const tryPlay = () => {
+        v.muted = true;                 // crucial for autoplay
+        v.playsInline = true;
+        const p = v.play && v.play();
+        if (p && p.catch) p.catch(() => {
+          // retry soon; user gestures (scroll/touch) will also re-trigger
+          setTimeout(() => { v.muted = true; v.play().catch(()=>{}); }, 120);
+        });
+      };
 
-      v.addEventListener('loadeddata', markLoaded, { once: true });
-      v.addEventListener('canplaythrough', markLoaded, { once: true });
+      // If video was ready before this script ran
+      if (v.readyState >= 2) { markLoaded(); tryPlay(); }
 
-      // Ensure autoplay policies are satisfied
-      v.muted = true;
-      v.playsInline = true;
-      // Try to play; ignore if blocked (fallback image still shows)
-      v.play().catch(() => {});
+      v.addEventListener('loadeddata', () => { markLoaded(); tryPlay(); }, { once: true });
+      v.addEventListener('canplay',      () => { markLoaded(); tryPlay(); }, { once: true });
+      v.addEventListener('canplaythrough', tryPlay);
+
+      ['pointerdown','touchstart','keydown','scroll'].forEach(evt =>
+        window.addEventListener(evt, tryPlay, { once:true, passive:true })
+      );
+
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+      window.addEventListener('load', tryPlay);
+
+      // Safety for preview engines: show a hairline until "loaded" arrives
+      setTimeout(() => {
+        if (!v.classList.contains('loaded') && !v.style.opacity) v.style.opacity = '0.001';
+      }, 800);
     })();
-
-    // Footer year
-    (function(){ const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear(); })();
   </script>
 </body>
 </html>
