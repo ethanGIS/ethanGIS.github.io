@@ -9,24 +9,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/base.css">
 
-  <!-- Page-local polish (form + map). Safe, minimal, and scoped. -->
+  <!-- Page-local polish (image + map). Kept minimal and scoped. -->
   <style>
     .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
     .contact-info img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;height:auto;object-fit:cover}
     .contact-info .block{margin:12px 0 0}
     .contact-info a{font-weight:700}
     .contact-card{background:var(--brand-white);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
-    .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .contact-form label{font-size:14px;color:var(--brand-slate)}
-    .contact-form input,.contact-form textarea{
-      width:100%;background:transparent;border:none;border-bottom:2px solid rgba(0,0,0,.2);
-      padding:10px 4px 12px;font:inherit;color:var(--brand-navy);outline:none;border-radius:0;
-    }
-    .contact-form input:focus,.contact-form textarea:focus{border-bottom-color:var(--brand-teal)}
-    .contact-form textarea{min-height:120px;resize:vertical}
-    .contact-form .actions{margin-top:16px}
     .map-embed{margin-top:22px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-    @media (max-width: 900px){ .contact-grid{grid-template-columns:1fr} .contact-form .row{grid-template-columns:1fr} }
+    @media (max-width: 900px){
+      .contact-grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body class="page">
@@ -34,10 +27,8 @@
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="index.html" aria-label="Global Imaging Specialists">
-      <!-- White logo (shows over dark hero) -->
-      <img class="on-dark"  src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
-      <!-- Teal/Navy logo (shows on solid header / internal pages) -->
-      <img class="on-light" src="assets/GIS Vector.svg"        alt="Global Imaging Specialists">
+      <img class="on-dark"  src="assets/GIS Vector.svg" alt="Global Imaging Specialists">
+      <img class="on-light" src="assets/GIS Vector.svg" alt="Global Imaging Specialists">
     </a>
 
     <button class="menu-btn" aria-label="Toggle menu" onclick="window.toggleMenu()">☰</button>
@@ -60,7 +51,7 @@
     <div class="container">
       <h1 class="reveal" data-animate="fade-up" style="margin:0">Contact Us</h1>
       <p class="section-sub reveal" data-animate="fade-up" style="color:#dbe5f5;margin-top:8px">
-        Flexible teleradiology solutions for each care setting.
+        Flexible radiology solutions for each care setting.
       </p>
     </div>
   </section>
@@ -93,45 +84,29 @@
         </div>
 
         <p class="small" style="margin:14px 0 0;color:var(--brand-slate)">
-          For general inquiries or partnership opportunities, please fill out the form or reach us directly by phone/email.
+          For general inquiries or partnership opportunities, please email us or call directly.
         </p>
       </div>
 
-      <!-- Right column: form -->
+      <!-- Right column: email button (replaces form) -->
       <div class="contact-card reveal" data-animate="fade-left">
-        <h2 class="section-title" style="margin:0 0 10px">Contact us</h2>
+        <h2 class="section-title" style="margin:0 0 10px">Email Us</h2>
+        <p class="small" style="margin:0 0 12px;color:var(--brand-slate)">
+          The fastest way to reach our team is by email. Click below to open your mail app and start a message to
+          <strong>info@gisrads.com</strong>.
+        </p>
 
-        <!-- NOTE:
-             - If you already have a backend endpoint, change the `action` to that URL.
-             - If not, you can use Formspree (free) and replace the action with their endpoint.
-             - As a fallback, the form will do nothing harmful; it just won't send anywhere.
-        -->
-        <form class="contact-form" method="POST" action="#" accept-charset="UTF-8">
-          <div class="row">
-            <div>
-              <label for="first">First name *</label>
-              <input id="first" name="first_name" type="text" required>
-            </div>
-            <div>
-              <label for="last">Last name</label>
-              <input id="last" name="last_name" type="text">
-            </div>
-          </div>
+        <a
+          class="cta"
+          href="mailto:info@gisrads.com?subject=Inquiry%20from%20GIS%20Radiology%20Website"
+          style="display:inline-block;margin-top:6px"
+        >
+          Email info@gisrads.com
+        </a>
 
-          <div style="margin-top:14px">
-            <label for="email">Email *</label>
-            <input id="email" name="email" type="email" required>
-          </div>
-
-          <div style="margin-top:14px">
-            <label for="message">Message</label>
-            <textarea id="message" name="message"></textarea>
-          </div>
-
-          <div class="actions">
-            <button class="cta" type="submit">Submit</button>
-          </div>
-        </form>
+        <p class="small" style="margin:12px 0 0;color:var(--brand-slate)">
+          Tip: Include your organization name, location, and the services you’re interested in.
+        </p>
       </div>
     </div>
 
@@ -149,16 +124,36 @@
   <footer>
     <div class="container" style="padding:28px 20px">
       <div class="footer-grid">
-        <div><strong>GIS Radiology</strong><p class="small">Fast, accurate teleradiology reads with seamless operations.</p></div>
-        <div><strong>Company</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
-          <li><a href="about.html">About</a></li><li><a href="news.html">News</a></li><li><a href="care.html">Customer Care</a></li></ul></div>
-        <div><strong>Services</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
-          <li><a href="services.html">Subspecialty Interpretations</a></li><li><a href="services.html">Supported Modalities</a></li></ul></div>
-        <div><strong>Legal</strong><ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
-          <li><a href="#">Privacy Policy</a></li><li><a href="#">Notice of Privacy Practices</a></li></ul></div>
+        <div>
+          <strong>GIS Radiology</strong>
+          <p class="small">Fast, accurate radiology reads with seamless operations.</p>
+        </div>
+        <div>
+          <strong>Company</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="about.html">About</a></li>
+            <li><a href="news.html">&nbsp;</a></li>
+            <li><a href="care.html">&nbsp;</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Services</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="services.html">Subspecialty Interpretations</a></li>
+            <li><a href="services.html">Supported Modalities</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Legal</strong>
+          <ul class="small" style="list-style:none;padding:0;margin-top:8px;line-height:1.9">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">&nbsp;</a></li>
+          </ul>
+        </div>
       </div>
       <div class="small" style="margin-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <span>© <span id="y"></span> GIS Radiology</span><span>Site by Your Company</span>
+        <span>© <span id="y"></span> Global Imaging Specialists, LLC. All Rights Reserved.</span>
+        <span>&nbsp;</span>
       </div>
     </div>
   </footer>
