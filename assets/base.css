@@ -714,10 +714,44 @@ body:not(.page) header:not(.scrolled) .nav a.cta:hover{
 @media (max-width:900px){
   .list{ grid-template-columns:1fr; }
 }
+/* --- Bullet list with grid layout & restored bullets --- */
+.list{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(260px, 1fr)); /* two columns */
+  column-gap:32px;
+  row-gap:10px;
+  list-style:none;     /* disable native bullets so we can control spacing */
+  padding-left:0;
+  margin:0;
+}
+
+.list li{
+  position:relative;
+  padding-left:1.25rem;    /* space for bullet */
+  margin:6px 0;
+  break-inside:avoid;
+}
+
+/* custom bullet */
+.list li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--brand-teal);
+  font-weight:700;
+  line-height:1.4;
+}
+
+/* mobile: stack into one column */
+@media (max-width:900px){
+  .list{ grid-template-columns:1fr; }
+}
 
 
 /* Videos (non-hero) */
 video:not(.bgvid){ max-width:100%; height:auto; display:block; }
+
 
 
 
