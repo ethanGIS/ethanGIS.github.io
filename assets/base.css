@@ -696,6 +696,8 @@ body:not(.page) header:not(.scrolled) .nav a.cta:hover{
   padding-right: 8px;          /* prevents wrap hugging the gutter */
 }
 
+
 /* Videos (non-hero) */
 video:not(.bgvid){ max-width:100%; height:auto; display:block; }
+
 
