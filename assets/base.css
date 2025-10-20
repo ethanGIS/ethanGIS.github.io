@@ -695,9 +695,29 @@ body:not(.page) header:not(.scrolled) .nav a.cta:hover{
   margin: 6px 0;
   padding-right: 8px;          /* prevents wrap hugging the gutter */
 }
+/* --- Bullet lists: robust 2-column layout (no splitting across columns) --- */
+.list{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(260px, 1fr)); /* tweak 260px if you want */
+  column-gap:32px;  /* space between the two columns */
+  row-gap:10px;     /* vertical space between list items */
+  list-style:disc outside;
+  padding-left:1.25rem; /* keep bullets aligned nicely */
+  margin:0;
+}
+.list li{
+  break-inside:avoid; /* just in case a browser tries to split elements */
+  margin:6px 0;
+}
+
+/* Mobile: 1 column */
+@media (max-width:900px){
+  .list{ grid-template-columns:1fr; }
+}
 
 
 /* Videos (non-hero) */
 video:not(.bgvid){ max-width:100%; height:auto; display:block; }
+
 
 
