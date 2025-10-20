@@ -674,6 +674,28 @@ body:not(.page) header:not(.scrolled) .nav a.cta:hover{
     padding-right: 8px;      /* tiny buffer so long lines don't hug the gap */
   }
 }
+/* Keep list items from breaking across CSS columns */
+.list{
+  columns: 2;
+  column-gap: 56px;           /* a bit more breathing room */
+}
+
+.list li{
+  /* never split an item across columns */
+  break-inside: avoid-column;  /* modern */
+  break-inside: avoid;         /* fallback */
+  -webkit-column-break-inside: avoid; /* WebKit */
+  -moz-column-break-inside: avoid;    /* Firefox */
+  page-break-inside: avoid;
+
+  /* layout nudge to enforce atomic items */
+  display: inline-block;
+  width: 100%;
+
+  margin: 6px 0;
+  padding-right: 8px;          /* prevents wrap hugging the gutter */
+}
 
 /* Videos (non-hero) */
 video:not(.bgvid){ max-width:100%; height:auto; display:block; }
+
