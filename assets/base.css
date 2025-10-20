@@ -108,6 +108,7 @@ body:not(.page) header:not(.scrolled) nav a{ color:#fff; }
 
     /* look */
 
+
     background: rgba(0, 51, 102, 0.94); /* translucent navy */
     color:#fff;
     border:1px solid rgba(255,255,255,0.06);
@@ -661,6 +662,16 @@ body:not(.page) header:not(.scrolled) .nav a.cta:hover{
   .cta-band-section {
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+}
+/* Make two-column lists breathe on large screens */
+@media (min-width: 1100px){
+  .list{
+    column-gap: 48px;        /* was default; give the bullets breathing room */
+  }
+  .list li{
+    break-inside: avoid;     /* don't split an item across columns */
+    padding-right: 8px;      /* tiny buffer so long lines don't hug the gap */
   }
 }
 
